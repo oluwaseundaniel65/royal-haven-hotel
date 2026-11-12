@@ -54,7 +54,8 @@ nav li a:hover {
     
 }
 .btn:hover {
-    background-color: rgb(47, 88, 6);
+    background-color: rgb(17, 122, 207);
+    color: #f8f8f8;
 }
 
 .book-now a{
@@ -351,8 +352,9 @@ h1 {
     font-size: 15px;
 }
 .nav-links {
-    display: block;
     display:none;
+    flex-direction: column;
+    text-align: center;
 }
 .btn { font-size: 15px;
     
@@ -453,5 +455,17 @@ font-size: 20px;
 .footer p {
     font-size: 20px;
     padding-top: 5px;
+}
+.menu-toggle {
+display: block;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+}
+.show-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 }

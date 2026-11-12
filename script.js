@@ -38,17 +38,7 @@ function welcome(name)
 {console.log("Welcome to Royal Haven hotel, your comfort is our priority, " + name);}
 welcome("david");
 
-function roomnumber(number)
-{alert ("your room number is " + number);}
-roomnumber (101);
 
-function score (number)
-{alert ("Your score in ACC is  " + number);}
-score (95);
-
-function room (name, roomtype)
-{alert (name + " book a " + roomtype + "room");}
-room ("daniel","standard");
 
 const hotelname = "royalhaven";
 let roomprices = 45000;
@@ -66,5 +56,12 @@ else {console.log ("sorry, no rooms available");}}
 bookroom ();
 
 
-let heading = document.querySelector(".abouts h2");
-heading.textContent = "information about us";
+let heading = document.querySelector(".abouts");
+heading.style.color = "blue";
+
+let bookbutton = document.querySelector (".btn");
+bookbutton.addEventListener("dblclick", function (){alert("which of the room are you interested in");});
+
+let menutoggle = document.querySelector (".menu-toggle");
+let navlink = document.querySelector (".nav-links");
+menutoggle.addEventListener("click", function(){navlink.classList.toggle("show-menu");});
