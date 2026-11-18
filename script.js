@@ -65,3 +65,45 @@ bookbutton.addEventListener("dblclick", function (){alert("which of the room are
 let menutoggle = document.querySelector (".menu-toggle");
 let navlink = document.querySelector (".nav-links");
 menutoggle.addEventListener("click", function(){navlink.classList.toggle("show-menu");});
+
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+
+    slides.forEach(function(slide) {
+        slide.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+}
+function prevSlide() {
+
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+}
+
+
+
+
+setInterval(nextSlide, 3000);
+
+
