@@ -76,10 +76,8 @@ function showSlide(index) {
     slides.forEach(function(slide) {
         slide.classList.remove("active");
     });
-
     slides[index].classList.add("active");
 }
-
 function nextSlide() {
 
     currentSlide++;
@@ -100,10 +98,26 @@ function prevSlide() {
 
     showSlide(currentSlide);
 }
-
-
-
-
 setInterval(nextSlide, 3000);
 
+const slider = document.querySelectorAll(".slide");
+let currentslide = 0;
+function showSlide (index) {
+    slider.forEach(function(slide) { slide.classList.remove("active");});
+    slider[index].classList.add("active");
+}
+function nextSlide() {
+    currentSlide++;
+    if(currentSlide >= slides.length) {
+        currentSlide = 0;}
+    showSlide(currentSlide);
 
+}
+function prevSlide() {
+    currentSlide--;
+    if(currentSlide < 0) {currentSlide =slides.length - 1;}
+    showSlide(currentSlide);
+}
+
+
+setInterval(nextSlide, 4000);
