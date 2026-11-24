@@ -67,57 +67,107 @@ let navlink = document.querySelector (".nav-links");
 menutoggle.addEventListener("click", function(){navlink.classList.toggle("show-menu");});
 
 
-const slides = document.querySelectorAll(".slide");
+const heroSlides = document.querySelectorAll(".slides .slide");
 
-let currentSlide = 0;
+let heroCurrentSlide = 0;
 
-function showSlide(index) {
+function showheroSlide(index) {
 
-    slides.forEach(function(slide) {
+    heroSlides.forEach(function(slide) {
         slide.classList.remove("active");
     });
-    slides[index].classList.add("active");
+    heroSlides[index].classList.add("active");
 }
-function nextSlide() {
+function nextheroSlide() {
 
-    currentSlide++;
+    heroCurrentSlide++;
 
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
+    if (heroCurrentSlide >= heroSlides.length) {
+        heroCurrentSlide = 0;
     }
 
-    showSlide(currentSlide);
+    showheroSlide(heroCurrentSlide);
 }
-function prevSlide() {
+function prevheroSlide() {
 
-    currentSlide--;
+    heroCurrentSlide--;
 
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
+    if (heroCurrentSlide < 0) {
+        heroCurrentSlide = heroSlides.length - 1;
     }
 
-    showSlide(currentSlide);
+    showheroSlide(heroCurrentSlide);
 }
-setInterval(nextSlide, 3000);
-
-const slider = document.querySelectorAll(".slide");
-let currentslide = 0;
-function showSlide (index) {
-    slider.forEach(function(slide) { slide.classList.remove("active");});
-    slider[index].classList.add("active");
-}
-function nextSlide() {
-    currentSlide++;
-    if(currentSlide >= slides.length) {
-        currentSlide = 0;}
-    showSlide(currentSlide);
-
-}
-function prevSlide() {
-    currentSlide--;
-    if(currentSlide < 0) {currentSlide =slides.length - 1;}
-    showSlide(currentSlide);
-}
+setInterval(nextheroSlide, 3000);
 
 
-setInterval(nextSlide, 4000);
+
+const offerSlides = document.querySelectorAll(".slider .slide");
+
+let offerCurrentSlide = 0;
+
+function showofferSlide(index) {
+
+    offerSlides.forEach(function(slide) {
+        slide.classList.remove("active");
+    });
+    offerSlides[index].classList.add("active");
+}
+function nextofferSlide() {
+
+    offerCurrentSlide++;
+
+    if (offerCurrentSlide >= offerSlides.length) {
+        offerCurrentSlide = 0;
+    }
+
+    showofferSlide(offerCurrentSlide);
+}
+function prevofferSlide() {
+
+    offerCurrentSlide--;
+
+    if (offerCurrentSlide < 0) {
+        offerCurrentSlide = offerSlides.length - 1;
+    }
+
+    showofferSlide(offerCurrentSlide);
+}
+setInterval(nextofferSlide, 3000);
+
+
+let videos = ["promotion.mp4", "love.mp4.mp4"];
+let currentvideo = 0;
+
+let video = document.querySelector (".slide");
+
+let nextbtn = document.querySelector (".next-button");
+
+let prevbtn = document.querySelector (".prev-button");
+
+ nextbtn.addEventListener ("click", function () {currentvideo++; if(currentvideo >= videos.length) {currentvideo = 0;} 
+ video.src = videos [currentvideo];
+ video.play();
+});
+
+prevbtn.addEventListener ("click", function () {currentvideo--; if (currentvideo < 0) {currentvideo = videos.length - 1;} 
+video.src = videos [currentvideo];
+video.play ();
+});
+
+
+
+   
+
+function prevofferSlide() {
+
+    offerCurrentSlide--;
+
+    if (offerCurrentSlide < 0) {
+        offerCurrentSlide = offerSlides.length - 1;
+    }
+
+    showofferSlide(offerCurrentSlide);
+}
+
+
